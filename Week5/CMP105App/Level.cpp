@@ -4,9 +4,11 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 {
 	window = hwnd;
 	input = in;
-
+	
 	// initialise game objects
+	
 
+	
 }
 
 Level::~Level()
@@ -23,14 +25,14 @@ void Level::handleInput(float dt)
 // Update game objects
 void Level::update(float dt)
 {
-
+	myZombie.update(dt);
 }
 
 // Render level
 void Level::render()
 {
 	beginDraw();
-
+	window->draw(myZombie.zombie);
 	endDraw();
 }
 

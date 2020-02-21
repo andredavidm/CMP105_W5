@@ -5,7 +5,7 @@
 #include "Framework/GameObject.h"
 #include <string>
 #include <iostream>
-
+#include "Zombie.h"
 
 class Level{
 public:
@@ -15,7 +15,10 @@ public:
 	void handleInput(float dt);
 	void update(float dt);
 	void render();
+	
+	Zombie myZombie;
 
+	
 private:
 	// Default functions for rendering to the screen.
 	void beginDraw();
@@ -24,4 +27,9 @@ private:
 	// Default variables for level class.
 	sf::RenderWindow* window;
 	Input* input;
+
+	
+
+
+
 };
