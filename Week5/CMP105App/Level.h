@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include "Zombie.h"
+#include "Mario.h"
 
 class Level{
 public:
@@ -17,7 +18,7 @@ public:
 	void render();
 	
 	Zombie myZombie;
-
+	Mario myMario;
 	
 private:
 	// Default functions for rendering to the screen.

@@ -21,7 +21,8 @@ Zombie::Zombie()
 	walk.setFrameSpeed(1.f / 10.f);
 	
 
-	
+	rmovement = { 100,0 };
+	lmovement = { -100,0 };
 }
 Zombie::~Zombie()
 {
@@ -31,7 +32,32 @@ Zombie::~Zombie()
 void Zombie::update(float dt)
 {
 
-	walk.animate(dt);
-	setTextureRect(walk.getCurrentFrame());
+	if (input->isKeyDown(sf::Keyboard::D))
+	{
+		zombie.move(rmovement * dt);
+		
+		walk.animate(dt);
+		moving_left = false;
+	}
+
+	else if (input->isKeyDown(sf::Keyboard::A))
+	{
+		zombie.move(lmovement * dt);
+		
+		walk.animate(dt);
+		moving_left = true;
+	}
+
+	if (moving_left)
+	{
+		walk.setFlipped(true);
+	}
+	else
+	{
+		walk.setFlipped(false);
+	}
+	
+	zombie.setTextureRect(walk.getCurrentFrame());
+	
 
 }

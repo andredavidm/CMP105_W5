@@ -7,8 +7,8 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	
 	// initialise game objects
 	
-
-	
+	myMario.setInput(input);
+	myZombie.setInput(input);
 }
 
 Level::~Level()
@@ -26,20 +26,22 @@ void Level::handleInput(float dt)
 void Level::update(float dt)
 {
 	myZombie.update(dt);
+	myMario.update(dt);
 }
 
 // Render level
 void Level::render()
 {
 	beginDraw();
-	window->draw(myZombie.zombie);
+	//window->draw(myZombie.zombie);
+	window->draw(myMario.mario);
 	endDraw();
 }
 
 // clear back buffer
 void Level::beginDraw()
 {
-	window->clear(sf::Color(100, 149, 237));
+	window->clear();
 }
 
 // Ends rendering to the back buffer, and swaps buffer to the screen.

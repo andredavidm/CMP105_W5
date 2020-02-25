@@ -15,9 +15,11 @@ public:
 	sf::Texture zombieTexture;
 
 	GameObject zombie;
-
+	sf::Vector2f lmovement;
+	sf::Vector2f rmovement;
 protected:
 	
+	bool moving_left;
 	Animation walk;
 
 };
